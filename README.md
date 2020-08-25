@@ -94,7 +94,7 @@ class Solution {
         // This dictionary will store the numbers in the input as keys and their indices as values
         var dict = [Int: Int]()
         
-        // We'll use enumerated to return a sequence of pais
+        // We'll use enumerated to return a sequence of pairs
         for (i, num) in nums.enumerated() { 
             // We'll subtract num from the target to find the other number we need, that way they add up to the target
             if let lastIndex = dict[target - num] { 
@@ -107,4 +107,39 @@ class Solution {
         return [0, 0]
     }
 }
+```
+---
+## Code Challenge - Implement Queue using Stacks
+
+Implement the following operations of a queue using stacks.
+    * push(x) -- Push element x to the back of queue
+    * pop() -- Removes the element from in front of queue
+    * peek() -- Get the front element
+    * empty() -- Return whether the queue is empty
+
+
+#### My Solution
+
+```python
+class Stack:
+
+    def __init__(self):
+    # Initialize your data structure
+        self.items = []
+        
+    def push(self, x):
+    # Push element x to the back of queue
+        self.items.insert(0, x)
+    
+    def pop(self):
+    # Removes the element from in front of queue and returns that element
+        return self.items.pop()
+    
+    def peek(self):
+    # Get the front element
+        return self.items[len(self.items)-1]
+    
+    def empty(self):
+    # Returns whether the queue is empty
+        return self.items == []
 ```
