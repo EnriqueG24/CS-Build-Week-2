@@ -112,16 +112,16 @@ class Solution {
 ## Code Challenge - Implement Queue using Stacks
 
 Implement the following operations of a queue using stacks.
-    * push(x) -- Push element x to the back of queue
-    * pop() -- Removes the element from in front of queue
-    * peek() -- Get the front element
-    * empty() -- Return whether the queue is empty
+ * push(x) -- Push element x to the back of queue
+ * pop() -- Removes the element from in front of queue
+ * peek() -- Get the front element
+ * empty() -- Return whether the queue is empty
 
 
 #### My Solution
 
 ```python
-class Stack:
+class MyQueue(object):
 
     def __init__(self):
     # Initialize your data structure
