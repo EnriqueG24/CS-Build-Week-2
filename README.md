@@ -9,9 +9,7 @@ TrainingKit](https://learn.lambdaschool.com/cs/sprint/reco0t22NdXmr8VyL).
 
 ---
 
-## Code Challenge Problems
-
-Arrays - DS
+## Code Challenge - Arrays
 
 Given an array, **A** , of **N** integers, print each element in reverse order as a single line of space-separated integers.
 
@@ -70,6 +68,43 @@ class Solution {
             // Otherwise return false
             return false
         }
+    }
+}
+```
+---
+
+## Code Challenge - Two Sum
+
+Given an array of integers, return **indices** of the two numbers such that they add up to a specific target. You may assume that each input would have **exactly** one solution, and you may no tuse the *same* element twice.
+
+```swift
+/* 
+Given nums = [2, 7, 11, 15], target = 9
+
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1]
+*/
+```
+
+#### My Solution
+
+```swift
+class Solution {
+    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+        // This dictionary will store the numbers in the input as keys and their indices as values
+        var dict = [Int: Int]()
+        
+        // We'll use enumerated to return a sequence of pais
+        for (i, num) in nums.enumerated() { 
+            // We'll subtract num from the target to find the other number we need, that way they add up to the target
+            if let lastIndex = dict[target - num] { 
+                // If the dictionary knows what index the other number is at, we return that index, and i
+                return [lastIndex, i]
+            }
+            // If we haven't seen that number before, we record i into the dictionary under the key num
+            dict[num] = i
+        }
+        return [0, 0]
     }
 }
 ```
