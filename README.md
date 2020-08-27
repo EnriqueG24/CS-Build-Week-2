@@ -21,7 +21,7 @@ Given an array, **A** , of **N** integers, print each element in reverse order a
 2 3 4 1
 ```
 
-##### My Solution
+##### My Solution (Swift)
 ```Swift
 func reverseArray(a: [Int]) -> [Int] {
     // So we can obtain the value a single time instead of once per iteration
@@ -55,7 +55,7 @@ Output: False
 */
 ```
 
-#### My Solution
+#### My Solution (Swift)
 
 ```swift
 class Solution {
@@ -86,7 +86,7 @@ return [0, 1]
 */
 ```
 
-#### My Solution
+#### My Solution (Swift)
 
 ```swift
 class Solution {
@@ -118,7 +118,7 @@ Implement the following operations of a queue using stacks.
  * empty() -- Return whether the queue is empty
 
 
-#### My Solution
+#### My Solution (Python)
 
 ```python
 class MyQueue(object):
@@ -142,4 +142,35 @@ class MyQueue(object):
     def empty(self):
     # Returns whether the queue is empty
         return self.items == []
+```
+---
+
+## Code Challenge - Merge Two Sorted Lists
+
+Merge two sorted linked lists and return it as a new **sorted** list. The new list should be made by splicing together the nodes of the first two lists.
+
+#### My Solution (Python)
+
+```python
+class ListNode:
+    def __init__(self, val = 0, next = None):
+        self.val = val
+        self.next = next
+        
+class Solution:
+    def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
+        newList = ListNode(0)
+        cur = newList
+        
+        while l1 and l2:
+        # if the value of the first linked list is less than the second linked list
+            if l1.val < l2.val:
+                cur.next = l1
+                l1 = l1.next
+            else:
+                cur.next = l2
+                l2 = l2.next
+            cur = cur.next
+        cur.next = l1 or l2
+        return newList.next
 ```
