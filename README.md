@@ -108,6 +108,22 @@ class Solution {
     }
 }
 ```
+
+#### Solution in Python
+```python
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # Create a new empty dictionary
+        x = {}
+        # enumerate through the List
+        for i, num in enumerate(nums):
+            # Subtract the num from the target
+            if target - num in x:
+                # Return i, as well as the index for x
+                return [i, x[target - num]]
+            # If that number has yet to be seen, we record it into our dictionary under the key num
+            x[num] = i
+```
 ---
 ## Code Challenge - Implement Queue using Stacks
 
